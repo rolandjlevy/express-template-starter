@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  /* add a border to every element to show the layout */
+  border: 0.5px solid #ddd;
+}
+
+body {
+  margin: 30px;
+}
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.h-align, .v-align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.h-align {
+  flex-direction: row;
+}
+
+.v-align {
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+img.featured {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  object-position: center;
+  margin: 20px 0;
+}
+
+a {
+  color: #ff6600;
+  transition: all 0.25s ease;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #993300;
+  transition: all 0.25s ease;
+}
+
+footer {
+  color: #999;
+  padding: 20px;
+}
