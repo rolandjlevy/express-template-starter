@@ -1,6 +1,7 @@
 // Set up server with express.js
 const express = require('express');
 const app = express();
+const path = require('path');
 const env = require('dotenv');
 const port = process.env.PORT || 3000;
 
@@ -8,6 +9,9 @@ const port = process.env.PORT || 3000;
 const ejs = require('ejs');
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+
+// Set path for views directory
+app.set('views', path.join(__dirname, '/views'));
 
 // For body parsing in POST routes
 app.use(express.urlencoded({ extended: true }));
