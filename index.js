@@ -9,9 +9,11 @@ const ejs = require('ejs');
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
+// For body parsing in POST routes
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// middleware to capture current url
 app.use((req, res, next) => {
   res.locals.uri = req.originalUrl;
   next();
