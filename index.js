@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 const env = require('dotenv');
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 
 // Set up ejs templates
 const ejs = require('ejs');
