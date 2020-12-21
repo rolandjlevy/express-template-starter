@@ -38,6 +38,6 @@
 
 - Deploy to the build version of this project with `sh deploy.sh`. See [instructions here](https://stackoverflow.com/questions/56638277/build-and-publish-dist-folder-to-github-pages)
 
-- Generate public SSH key. See comment from [mr1528](https://github.com/facebookresearch/deepmask/issues/23) and [this article](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
-- After the key has been generated, use pwd, cd and cat in cli to open the public key
+- Generate public SSH key. See comment from [mr1528](https://github.com/facebookresearch/deepmask/issues/23) and [this article](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) `ssh-keygen -t ed25519 -C "rolandjlevy@gmail.com"` 
+- After the key has been generated, use pwd, cd and go to `/home/runner/.ssh/` then use cat in cli to open the public key
 - This is [how to add the key](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account) here [on my Github account](https://github.com/settings/keys)

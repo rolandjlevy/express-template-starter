@@ -12,7 +12,14 @@ app.use(express.static('public'));
 
 // Set path for views directory
 const views = path.join(__dirname, '/views');
-console.log({views});
+if (views.includes('dist')) {
+  const oldPath = path.join(__dirname, 'package-dist.json');
+  const newPath = path.join(__dirname, 'package.json');
+  const fs = require('fs');
+  fs.rename(oldPath, newPath, function(err) {
+      if (err) console.log('ERROR: ' + err);
+  });
+}
 app.set('views', views);
 
 // For body parsing in POST routes
