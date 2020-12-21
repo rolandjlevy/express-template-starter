@@ -21,3 +21,15 @@ if (imgWrapper) {
   });
   imgWrapper.appendChild(img);
 }
+
+class Utils {
+  constructor() {
+  }
+  getStatus() {
+    return 'OK';
+  }
+}
+
+const utils = new Utils();
+const status = utils.getStatus();
+console.log({status});

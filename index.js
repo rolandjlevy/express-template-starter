@@ -11,7 +11,9 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 // Set path for views directory
-app.set('views', path.join(__dirname, '/views'));
+const views = path.join(__dirname, '/views');
+console.log({views});
+app.set('views', views);
 
 // For body parsing in POST routes
 app.use(express.urlencoded({ extended: true }));
