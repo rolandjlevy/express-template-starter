@@ -22,7 +22,16 @@ if (imgWrapper) {
   imgWrapper.appendChild(img);
 }
 
-class Utils {
+// ES6 code for testing
+
+import Utils from './Utils.js';
+
+const utils = new Utils();
+const str = '<hello>';
+const tagExists = utils.isTag(str);
+console.log({tagExists});
+
+class Status {
   constructor() {
   }
   getStatus() {
@@ -30,6 +39,6 @@ class Utils {
   }
 }
 
-const utils = new Utils();
-const status = utils.getStatus();
-console.log({status});
+const status = new Status();
+const currentStatus = status.getStatus();
+console.log({currentStatus});

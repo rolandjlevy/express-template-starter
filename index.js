@@ -13,20 +13,20 @@ app.use(express.static('public'));
 // Set path for views directory
 const views = path.join(__dirname, '/views');
 
-// Rename 'package-dist.json' in dist folder
+// Rename 'package-dist.json' in dist folder if it exists
 if (views.includes('dist')) {
   const fs = require('fs');
   const oldPath = path.join(__dirname, 'package-dist.json');
   const newPath = path.join(__dirname, 'package.json');
-  try {
-    if (fs.existsSync(oldPath)) {
-      fs.rename(oldPath, newPath, function (err) {
-        if (err) console.log('ERROR: ' + err);
-      });
+  fs.access(oldPath, fs.F_OK, (err) => {
+    if (err) {
+      console.error(err);
+      return;
     }
-  } catch(err) {
-    console.error(err);
-  }
+    fs.rename(oldPath, newPath, (err) => {
+      if (err) console.log('Error: ' + err);
+    });
+  });
 }
 app.set('views', views);
 
